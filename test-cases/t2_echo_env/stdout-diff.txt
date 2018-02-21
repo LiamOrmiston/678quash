@@ -1,0 +1,6 @@
+1,2c1
+< HOME/home/a295g044 
+< HOME
+\ No newline at end of file
+---
+> /home/a295g044

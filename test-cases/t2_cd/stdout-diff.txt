@@ -1,0 +1,8 @@
+4,6c4,5
+< PWD/home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3
+< PWDPWD/home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3 
+< PWDPWD
+\ No newline at end of file
+---
+> /home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3
+> /home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3

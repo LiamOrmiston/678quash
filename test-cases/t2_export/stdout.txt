@@ -1,0 +1,11 @@
+/home/a295g044/EECS_678/Project1/quash/test-cases/t2_export/sandbox
+HOMEHOMESuccessfully set PWD = /home/a295g044
+/home/a295g044/EECS_678/Project1/quash/test-cases/t2_export/sandbox
+HOMESuccessfully set PWD = /home/a295g044
+dir1
+dir2
+dir3
+lorem_ipsum.txt
+valgrind_expected.txt
+HOMESuccessfully set PWD = /home/a295g044
+Successfully set PATH = /

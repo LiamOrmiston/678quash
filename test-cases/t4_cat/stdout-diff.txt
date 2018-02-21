@@ -1,0 +1,7 @@
+1d0
+< Successfully set ORIG_FILE = lorem_ipsum.txt
+14,16d12
+< Successfully set ORIG_FILE = lorem_ipsum.txt
+< Successfully set APPEND_FILE = li2.txt
+< ORIG_FILEAPPEND_FILEORIG_FILEAPPEND_FILEAPPEND_FILE
+\ No newline at end of file
