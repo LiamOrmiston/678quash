@@ -1,41 +1,41 @@
-==29414== Memcheck, a memory error detector
-==29414== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==29414== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
-==29414== Command: /home/a295g044/EECS_678/Project1/quash/quash
-==29414== 
-==29415== 
-==29415== HEAP SUMMARY:
-==29415==     in use at exit: 0 bytes in 0 blocks
-==29415==   total heap usage: 6 allocs, 6 frees, 17,810 bytes allocated
-==29415== 
-==29415== All heap blocks were freed -- no leaks are possible
-==29415== 
-==29415== For counts of detected and suppressed errors, rerun with: -v
-==29415== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-==29416== 
-==29416== HEAP SUMMARY:
-==29416==     in use at exit: 0 bytes in 0 blocks
-==29416==   total heap usage: 12 allocs, 12 frees, 19,878 bytes allocated
-==29416== 
-==29416== All heap blocks were freed -- no leaks are possible
-==29416== 
-==29416== For counts of detected and suppressed errors, rerun with: -v
-==29416== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-==29417== 
-==29417== HEAP SUMMARY:
-==29417==     in use at exit: 0 bytes in 0 blocks
-==29417==   total heap usage: 18 allocs, 18 frees, 21,961 bytes allocated
-==29417== 
-==29417== All heap blocks were freed -- no leaks are possible
-==29417== 
-==29417== For counts of detected and suppressed errors, rerun with: -v
-==29417== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-==29414== 
-==29414== HEAP SUMMARY:
-==29414==     in use at exit: 0 bytes in 0 blocks
-==29414==   total heap usage: 42 allocs, 42 frees, 29,444 bytes allocated
-==29414== 
-==29414== All heap blocks were freed -- no leaks are possible
-==29414== 
-==29414== For counts of detected and suppressed errors, rerun with: -v
-==29414== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==36543== Memcheck, a memory error detector
+==36543== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==36543== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==36543== Command: /home/a295g044/EECS_678/Project1/quash/quash
+==36543== 
+==36544== 
+==36544== HEAP SUMMARY:
+==36544==     in use at exit: 0 bytes in 0 blocks
+==36544==   total heap usage: 6 allocs, 6 frees, 17,810 bytes allocated
+==36544== 
+==36544== All heap blocks were freed -- no leaks are possible
+==36544== 
+==36544== For counts of detected and suppressed errors, rerun with: -v
+==36544== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==36545== 
+==36545== HEAP SUMMARY:
+==36545==     in use at exit: 0 bytes in 0 blocks
+==36545==   total heap usage: 12 allocs, 12 frees, 19,878 bytes allocated
+==36545== 
+==36545== All heap blocks were freed -- no leaks are possible
+==36545== 
+==36545== For counts of detected and suppressed errors, rerun with: -v
+==36545== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==36546== 
+==36546== HEAP SUMMARY:
+==36546==     in use at exit: 0 bytes in 0 blocks
+==36546==   total heap usage: 18 allocs, 18 frees, 21,961 bytes allocated
+==36546== 
+==36546== All heap blocks were freed -- no leaks are possible
+==36546== 
+==36546== For counts of detected and suppressed errors, rerun with: -v
+==36546== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==36543== 
+==36543== HEAP SUMMARY:
+==36543==     in use at exit: 0 bytes in 0 blocks
+==36543==   total heap usage: 42 allocs, 42 frees, 29,444 bytes allocated
+==36543== 
+==36543== All heap blocks were freed -- no leaks are possible
+==36543== 
+==36543== For counts of detected and suppressed errors, rerun with: -v
+==36543== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)

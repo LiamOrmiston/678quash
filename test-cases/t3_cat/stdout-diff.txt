@@ -25,9 +25,7 @@
 < ==#==   total heap usage: # allocs, 0 frees, 0 bytes allocated
 < ==#==   total heap usage: # allocs, 0 frees, # bytes allocated
 < ==#==   total heap usage: # allocs, # frees, # bytes allocated
-28,31d1
+28,30d1
 < Successfully set SMALL_FILE = ./dir2/test1.txt
 < Successfully set LARGE_FILE = ./valgrind_expected.txt
 < Successfully set OUT_FILE = ./out.txt
-< LARGE_FILEOUT_FILESMALL_FILEOUT_FILEOUT_FILEOUT_FILESMALL_FILE
-\ No newline at end of file

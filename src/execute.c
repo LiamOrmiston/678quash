@@ -47,7 +47,6 @@ const char* lookup_env(const char* env_var) {
   // correctly
   // HINT: This should be pretty simple
   // TODO: Remove warning silencers
-  printf(env_var);
   const char* str = getenv(env_var);
   return str;
 }

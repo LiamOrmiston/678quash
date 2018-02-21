@@ -28,4 +28,3 @@ TEST FILE 1
 Successfully set SMALL_FILE = ./dir2/test1.txt
 Successfully set LARGE_FILE = ./valgrind_expected.txt
 Successfully set OUT_FILE = ./out.txt
-LARGE_FILEOUT_FILESMALL_FILEOUT_FILEOUT_FILEOUT_FILESMALL_FILE

@@ -7,5 +7,3 @@
 < /home/a295g044/EECS_678/Project1/quash/test-cases/t3_find_grep/sandbox/dir3/dir3-1/lorem_ipsum.txt
 9d3
 < /home/a295g044/EECS_678/Project1/quash/test-cases/t3_find_grep/sandbox/lorem_ipsum.txt
-12d5
-< SANDBOX_DIR
