@@ -1,8 +1,0 @@
-1,3d0
-< Successfully set SMALL_FILE = ./dir2/test1.txt
-< Successfully set SMALL_FILE = ./dir2/test1.txt
-< Successfully set LARGE_FILE = ./valgrind_expected.txt
-5,7d1
-< Successfully set SMALL_FILE = ./dir2/test1.txt
-< Successfully set LARGE_FILE = ./valgrind_expected.txt
-< Successfully set OUT_FILE = ./out.txt

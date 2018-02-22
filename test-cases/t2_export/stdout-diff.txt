@@ -1,8 +1,0 @@
-2d1
-< Successfully set PWD = /home/a295g044
-4,8d2
-< Successfully set PWD = /home/a295g044
-< Successfully set PWD = /home/a295g044
-< Successfully set PATH = /
-< Successfully set PWD = /home/a295g044
-< Successfully set PATH = /

@@ -142,7 +142,7 @@ void run_echo(EchoCommand cmd) {
   // string is always NULL) list of strings.
   char** str = cmd.args;
 
-  // TODO: Implement echo
+  // DONE: Implement echo
   int i=0;
   while(str[i]!=NULL){
 	printf("%s ",str[i]);
@@ -160,9 +160,7 @@ void run_export(ExportCommand cmd) {
   const char* val = cmd.val;
 
   // TODO: Implement export.
-  if(setenv(env_var,val,1)==0){
-    printf("Successfully set %s = %s\n",env_var,val);
-  }
+  setenv(env_var,val,1);
 
 }
 

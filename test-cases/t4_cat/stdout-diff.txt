@@ -1,5 +1,0 @@
-1d0
-< Successfully set ORIG_FILE = lorem_ipsum.txt
-14,15d12
-< Successfully set ORIG_FILE = lorem_ipsum.txt
-< Successfully set APPEND_FILE = li2.txt

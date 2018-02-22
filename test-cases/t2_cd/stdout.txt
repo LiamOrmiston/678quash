@@ -1,5 +1,4 @@
 dir3-1
 dir3-2
-valgrind_expected.txt
-/home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3
-/home/a295g044/EECS_678/Project1/quash/test-cases/t2_cd/sandbox/dir3 
+/home/l881o027/EECS_678/678quash/test-cases/t2_cd/sandbox/dir3
+/home/l881o027/EECS_678/678quash/test-cases/t2_cd/sandbox/dir3 
