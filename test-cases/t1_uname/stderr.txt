@@ -1,17 +1,21 @@
-==36119== Memcheck, a memory error detector
-==36119== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==36119== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
-==36119== Command: /home/a295g044/EECS_678/Project1/quash/quash
-==36119== 
-IMPLEMENT ME: src/execute.c(line 59): check_jobs_bg_status()
-IMPLEMENT ME: src/execute.c(line 311): create_process()
-IMPLEMENT ME: src/execute.c(line 347): run_script()
-==36119== 
-==36119== HEAP SUMMARY:
-==36119==     in use at exit: 0 bytes in 0 blocks
-==36119==   total heap usage: 8 allocs, 8 frees, 19,074 bytes allocated
-==36119== 
-==36119== All heap blocks were freed -- no leaks are possible
-==36119== 
-==36119== For counts of detected and suppressed errors, rerun with: -v
-==36119== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==59616== Memcheck, a memory error detector
+==59616== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==59616== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==59616== Command: /home/a295g044/EECS_678/Project1/quash/quash
+==59616== 
+==59616== 
+==59616== HEAP SUMMARY:
+==59616==     in use at exit: 64 bytes in 1 blocks
+==59616==   total heap usage: 11 allocs, 10 frees, 19,150 bytes allocated
+==59616== 
+==59616== LEAK SUMMARY:
+==59616==    definitely lost: 0 bytes in 0 blocks
+==59616==    indirectly lost: 0 bytes in 0 blocks
+==59616==      possibly lost: 0 bytes in 0 blocks
+==59616==    still reachable: 64 bytes in 1 blocks
+==59616==         suppressed: 0 bytes in 0 blocks
+==59616== Reachable blocks (those to which a pointer was found) are not shown.
+==59616== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==59616== 
+==59616== For counts of detected and suppressed errors, rerun with: -v
+==59616== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
