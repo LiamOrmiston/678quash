@@ -73,26 +73,31 @@ void check_jobs_bg_status() {
   // processes belonging to a job have completed.
   struct Job current_job;
   pid_t m_front;
-  int num_of_jobs = length_job_queue(&job_q);
+
+int num_of_jobs = length_job_queue(&job_q);
   for(int i = 0; i < num_of_jobs;i++){
     current_job = pop_front_job_queue(&job_q);
 
     int num_of_pids = length_pid_queue(&current_job.pid_q);
+
     m_front = peek_front_pid_queue(&current_job.pid_q);
+    
     for(int num = 0; num < num_of_pids; num++){
+    
       pid_t current_pid = pop_front_pid_queue(&current_job.pid_q);
       int status;
+      
       if(waitpid(current_pid,&status,WNOHANG)==0){
         push_back_pid_queue(&current_job.pid_q,current_pid);
       }
     }
-  // TODO: Once jobs are implemented, uncomment and fill the following line
-  if(is_empty_pid_queue(&current_job.pid_q)){
-    print_job_bg_complete(current_job.job_id, m_front, current_job.cmd_job);
-  }else{
-    push_back_job_queue(&job_q,current_job);
+  
+    if(is_empty_pid_queue(&current_job.pid_q)){
+      print_job_bg_complete(current_job.job_id, m_front, current_job.cmd_job);
+    }else{
+      push_back_job_queue(&job_q,current_job);
+    }
   }
-}
 }
 
 // Prints the job id number, the process id of the first process belonging to
@@ -125,7 +130,6 @@ void run_generic(GenericCommand cmd) {
   // in the array is the executable
   char* exec = cmd.args[0];
   char** args = cmd.args;
-  // TODO: Remove warning silencers
   // TODO: Implement run generic
   if(execvpe(exec,args)<0){
   }
@@ -330,13 +334,6 @@ void create_process(CommandHolder holder, int i) {
   bool r_out = holder.flags & REDIRECT_OUT;
   bool r_app = holder.flags & REDIRECT_APPEND; // This can only be true if r_out
                                                // is true
-
-  // TODO: Remove warning silencers
-//  (void) p_in;  // Silence unused variable warning
-  //(void) p_out; // Silence unused variable warning
-  //(void) r_in;  // Silence unused variable warning
-  //(void) r_out; // Silence unused variable warning
-  //(void) r_app; // Silence unused variable warning
 
   // TODO: Setup pipes, redirects, and new process
   if(p_out){
