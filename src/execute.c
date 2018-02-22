@@ -32,7 +32,6 @@ typedef struct Job{
   pid_queue pid_q;
   pid_t pid;
 } Job;
-
 IMPLEMENT_DEQUE_STRUCT(job_queue, struct Job);
 IMPLEMENT_DEQUE(job_queue, struct Job);
 job_queue job_q;
@@ -47,10 +46,10 @@ char* get_current_directory(bool* should_free) {
   // HINT: This should be pretty simple
 
   // Change this to true if necessary
-  char* current = malloc(1024);
-
-  getcwd(current,1024);
   *should_free = true;
+
+  char* current = malloc(1024);
+  getcwd(current,1024);
 
   return current;
 }
@@ -159,7 +158,7 @@ void run_export(ExportCommand cmd) {
   const char* env_var = cmd.env_var;
   const char* val = cmd.val;
 
-  // TODO: Implement export.
+  // DONE: Implement export.
   setenv(env_var,val,1);
 
 }
@@ -175,12 +174,21 @@ void run_cd(CDCommand cmd) {
   }
 
   // TODO: Change directory
-  chdir(dir);
+  if (chdir(dir) !=0) {
+    perror("ERROR: Directory change failed");
+    return;
+  }
   // TODO: Update the PWD environment variable to be the new current working
   // directory and optionally update OLD_PWD environment variable to be the old
   // working directory.
-  setenv("OLD_PWD",lookup_env("PWD"),1);
-  setenv("PWD",dir,1);
+  if(setenv("OLD_PWD",lookup_env("PWD"),1) != 0) {
+    perror("ERROR: Failed to set OLD_PWD");
+    return;
+  }
+  else if(setenv("PWD",dir,1) != 0) {
+    perror("ERROR: Failed to set OLD_PWD");
+    return;
+  } 
 }
 
 // Sends a signal to all processes contained in a job
@@ -189,13 +197,27 @@ void run_kill(KillCommand cmd) {
   int job_id = cmd.job;
 
   // TODO: Remove warning silencers
-  (void) signal; // Silence unused variable warning
-  (void) job_id; // Silence unused variable warning
+  // (void) signal; // Silence unused variable warning
+  // (void) job_id; // Silence unused variable warning
 
   // TODO: Kill all processes associated with a background job
-  IMPLEMENT_ME();
+  // IMPLEMENT_ME();
 
+  int num_jobs = length_job_queue(&job_q);
+  for(int i = 0; i < num_jobs; i++) {
+	  Job tmp = pop_front_job_queue(&job_q);
+	  if(tmp.job_id == job_id){
+		  size_t num_processes = length_pid_queue(&tmp.pid_q);
+		  for(int j = 1; j <= num_processes; j++){
+			  int tmp_pid = pop_front_pid_queue(&tmp.pid_q);
+			  kill(tmp_pid, signal);
+			  push_back_pid_queue(&tmp.pid_q, tmp_pid);
+		  }
+	  }
+	  push_back_job_queue(&job_q, tmp);
+  }
 }
+
 
 
 // Prints the current working directory to stdout
