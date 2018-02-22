@@ -130,9 +130,8 @@ void run_generic(GenericCommand cmd) {
   // in the array is the executable
   char* exec = cmd.args[0];
   char** args = cmd.args;
-  // TODO: Implement run generic
-  if(execvpe(exec,args)<0){
-  }
+  // DONE:  Implement run generic
+  execvp(exec,args);
 
   perror("ERROR: Failed to execute program");
 }
