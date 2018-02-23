@@ -36,6 +36,12 @@ IMPLEMENT_DEQUE_STRUCT(job_queue, struct Job);
 IMPLEMENT_DEQUE(job_queue, struct Job);
 job_queue job_q;
 int job_number = 1;
+
+void destroy_job(Job j) {
+  free(j.cmd_job);
+  destroy_pid_queue(&j.pid_q);
+}
+
 /***************************************************************************
  * Interface Functions
  ***************************************************************************/
@@ -73,7 +79,11 @@ void check_jobs_bg_status() {
   struct Job current_job;
   pid_t m_front;
 
-int num_of_jobs = length_job_queue(&job_q);
+  int num_of_jobs = length_job_queue(&job_q);
+  if(num_of_jobs == 0) {
+    return;
+  }
+
   for(int i = 0; i < num_of_jobs;i++){
     current_job = pop_front_job_queue(&job_q);
 
@@ -84,7 +94,7 @@ int num_of_jobs = length_job_queue(&job_q);
     for(int num = 0; num < num_of_pids; num++){
     
       pid_t current_pid = pop_front_pid_queue(&current_job.pid_q);
-      int status;
+      int status = false;
       
       if(waitpid(current_pid,&status,WNOHANG)==0){
         push_back_pid_queue(&current_job.pid_q,current_pid);
@@ -93,7 +103,9 @@ int num_of_jobs = length_job_queue(&job_q);
   
     if(is_empty_pid_queue(&current_job.pid_q)){
       print_job_bg_complete(current_job.job_id, m_front, current_job.cmd_job);
-    }else{
+      destroy_job(current_job);
+    }
+    else{
       push_back_job_queue(&job_q,current_job);
     }
   }
@@ -196,11 +208,11 @@ void run_kill(KillCommand cmd) {
   int signal = cmd.sig;
   int job_id = cmd.job;
 
-  // TODO: Remove warning silencers
+  // DONE: Remove warning silencers
   // (void) signal; // Silence unused variable warning
   // (void) job_id; // Silence unused variable warning
 
-  // TODO: Kill all processes associated with a background job
+  // DONE: Kill all processes associated with a background job
   // IMPLEMENT_ME();
 
   int num_jobs = length_job_queue(&job_q);
@@ -235,10 +247,13 @@ void run_jobs() {
   // TODO: Print background jobs
   int number_of_jobs = length_job_queue(&job_q);
   for(int i=0; i < number_of_jobs;i++){
-    struct Job current_job = pop_front_job_queue(&job_q);
-    print_job(current_job.job_id,current_job.pid,current_job.cmd_job);
-    push_back_job_queue(&job_q,current_job);
+    Job current_job = pop_front_job_queue(&job_q);
+
+    printf("[%d]\t#PID#\t%s\n", current_job.job_id, current_job.cmd_job);
+
+    push_back_job_queue(&job_q, current_job);
   }
+
   // Flush the buffer before returning
   fflush(stdout);
 }
